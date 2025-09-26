@@ -1,13 +1,13 @@
-
 """
-TryHackMe iframe Parser
+    Author: Umiko (https://github.com/umikoio)
+    Project: THM iframe Parser (https://github.com/umikoio/thm-iframe-parser)
 
-TryHackMe iframe Parser ingests the public iframe provided by TryHackMe, parsing the incoming data, and converting it to JSON.
+    TryHackMe iframe Parser ingests the public iframe provided by TryHackMe, parsing the incoming data, and converting it to JSON.
 
-Usage:
-  python3 thm-iframe-parser.py --user 5672619
-  python3 thm-iframe-parser.py --user 5672619 --out thm_user.json
-  python3 thm-iframe-parser.py --user 5672619 | jq ".Data.[Rank|Streak|Badges|CompletedRooms|Level]"
+    Usage:
+        python3 thm-iframe-parser.py --user 5672619
+        python3 thm-iframe-parser.py --user 5672619 --out thm_user.json
+        python3 thm-iframe-parser.py --user 5672619 | jq ".Data.[Rank|Streak|Badges|CompletedRooms|Level]"
 """
 
 import argparse, json, re, sys, requests
