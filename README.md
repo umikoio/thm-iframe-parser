@@ -1,5 +1,5 @@
 <div align="center">
-  <img width="40%" src="assets/logo.png" />
+  <img width="25%" src="assets/logo.png" />
   <h1>TryHackMe iframe Parser</h1>
   <p>Ingest profile data from TryHackMe's public iframe and convert it to JSON.</p>
 </div>
@@ -16,8 +16,15 @@ This project is pretty simple in nature. It ingests the public iframe provided b
 | Level           | `String`  | [0x5]
 
 ## Usage
+
+Output user data to a file:
 ```bash
 python3 thm-iframe-parser.py --user 5672619 --output thm_user.json
+```
+
+Parse JSON directly in the terminal (this shows the value for "Badges"):
+```bash
+python3 thm-iframe-parser.py --user 5672619 | jq ".Data.Badges"
 ```
 
 ## JSON Example
