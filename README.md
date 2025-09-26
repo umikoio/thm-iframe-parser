@@ -9,10 +9,10 @@ This project is pretty simple in nature. It ingests the public iframe provided b
 # Endpoints
 | Title           | Data Type | Example
 |-----------------|-----------|---------|
-| Rank            | `String`  | 464176
+| Rank            | `Integer` | 464176
 | Streak          | `String`  | 30 days
 | Badges          | `Integer` | 10
-| Completed Rooms | `Integer` | 100
+| CompletedRooms  | `Integer` | 100
 | Level           | `String`  | [0x5]
 
 ## Usage
@@ -25,6 +25,8 @@ python3 thm-iframe-parser.py --user 5672619 --output thm_user.json
 Parse JSON directly in the terminal (this shows the value for "Badges"):
 ```bash
 python3 thm-iframe-parser.py --user 5672619 | jq ".Data.Badges"
+# or
+python3 thm-iframe-parser.py --user 5672619 | jq -r ".Data.Streak"
 ```
 
 ## JSON Example
@@ -42,5 +44,5 @@ python3 thm-iframe-parser.py --user 5672619 | jq ".Data.Badges"
 }
 ```
 
-> [!IMPORTANT]  
+> [!IMPORTANT]
 > At any time TryHackMe can change the HTML data within their iframe. This could potentially break the script. If you do notice any problems, feel free to open an [issue](https://github.com/umikoio/thm-iframe-parser/issues)!

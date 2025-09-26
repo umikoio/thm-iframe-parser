@@ -74,7 +74,10 @@ def map_data(clean_html: List[str]) -> Dict[str, str]:
 
     for i, title in enumerate(THM_TITLES):
         if i < len(clean_html):
-            final_data[title] = clean_html[i]
+            if title in ["Rank", "Badges", "CompletedRooms"]:
+                final_data[title] = int(clean_html[i])
+            else:
+                final_data[title] = str(clean_html[i])
         else:
             final_data[title] = None
 
@@ -104,7 +107,7 @@ def main(argv=None):
 
     # The final JSON output
     json_output: Dict[str, Any] = {
-        "userPublicId": str(user_id),
+        "userPublicId": int(user_id),
         "Source URL": THM_IFRAME_URL.format(user_id=user_id),
         "Data": final_data,
     }
