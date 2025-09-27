@@ -9,6 +9,8 @@ This project is pretty simple in nature. It ingests the public iframe provided b
 # Endpoints
 | Title           | Data Type | Example
 |-----------------|-----------|---------|
+| userPublicId    | `Integer` | 5672619
+| SourceURL       | `String`  | https://tryhackme.com/api/v2/badges/public-profile?userPublicId=5672619
 | Rank            | `Integer` | 464176
 | Streak          | `String`  | 30 days
 | Badges          | `Integer` | 10
@@ -32,13 +34,13 @@ python3 thm-iframe-parser.py --user 5672619 | jq -r ".Data.Streak"
 ## JSON Example
 ```json
 {
-  "userPublicId": "5672619",
-  "Source URL": "https://tryhackme.com/api/v2/badges/public-profile?userPublicId=5672619",
+  "userPublicId": 5672619,
+  "SourceURL": "https://tryhackme.com/api/v2/badges/public-profile?userPublicId=5672619",
   "Data": {
-    "Rank": "464201",
+    "Rank": 464201,
     "Streak": "9 days",
-    "Badges": "7",
-    "Completed Rooms": "17",
+    "Badges": 7,
+    "Completed Rooms": 17,
     "Level": "[0x5]"
   }
 }

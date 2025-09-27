@@ -108,7 +108,7 @@ def main(argv=None):
     # The final JSON output
     json_output: Dict[str, Any] = {
         "userPublicId": int(user_id),
-        "Source URL": THM_IFRAME_URL.format(user_id=user_id),
+        "SourceURL": THM_IFRAME_URL.format(user_id=user_id),
         "Data": final_data,
     }
 
